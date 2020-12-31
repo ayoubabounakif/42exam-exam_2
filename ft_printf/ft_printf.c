@@ -111,12 +111,10 @@ void	print_hex(void)
 void	ft_putnbr(int n, int precision)
 {
 	unsigned int	i;
-	int				sign;
 
 	if (n < 0)
 	{
 		ft_putchar('-');
-		sign = -1;
 		while (precision)
 		{
 			ft_putchar('0');
@@ -161,7 +159,7 @@ void	ft_check(const char *s, int *i)
 		flags.width = ft_atoi(s + (*i));
 		*i += num_base(flags.width, 10);
 	}
-	if (s[*i] == ' ')
+	if (s[*i] == '.')
 	{
 		flags.point = 1;
 		(*i)++;
@@ -203,7 +201,7 @@ int		ft_printf(const char *s, ...)
 
 int		main(void)
 {
-	ft_printf("The magic '%s' is -> '%5d' -> '%5x'\n", "number", 42, 42);
-	printf("The magic '%s' is -> '%5d' -> '%5x'\n", "number", 42, 42);
+	ft_printf("The magic '%s' is -> '%5d' -> '%10x'\n", "number", -42, 42);
+	printf("The magic '%s' is -> '%5d' -> '%10x'\n", "number", -42, 42);
 	return  (0);
 }

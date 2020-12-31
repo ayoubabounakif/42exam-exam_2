@@ -16,11 +16,11 @@ int		main(int ac, char **av)
 			j = 0;
 			while (av[i][j])
 			{
-				if (i == 2 && used[av[i][j]] == 0)
-					used[av[i][j]] = 1;
-				else if (i == 1 && used[av[i][j]] == 1)
+				if (i == 2 && used[(unsigned char)av[i][j]] == 0)
+					used[(unsigned char)av[i][j]] = 1;
+				else if (i == 1 && used[(unsigned char)av[i][j]] == 1)
 				{
-					used[av[i][j]] = 2;
+					used[(unsigned char)av[i][j]] = 2;
 					write(1, &av[i][j], 1);
 				}
 				j++;
