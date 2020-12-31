@@ -16,9 +16,9 @@ int		main(int ac, char **av)
 			j = 0;
 			while (av[i][j])
 			{
-				if (used[av[i][j]] == 0)
+				if (used[(unsigned char)av[i][j]] == 0)
 				{
-					used[av[i][j]] = 1;
+					used[(unsigned char)av[i][j]] = 1;
 					write (1, &av[i][j], 1);
 				}
 				j++;
