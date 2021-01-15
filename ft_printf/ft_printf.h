@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aabounak <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/15 17:06:55 by aabounak          #+#    #+#             */
+/*   Updated: 2021/01/15 17:06:56 by aabounak         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -17,17 +29,17 @@ t_flags			flags;
 va_list			ap;
 int				g_count = 0;
 
-void			init_flags(void);
-void			ft_putchar(char c);
-void			ft_putnbr(int n, int precision);
-int				ft_strlen(char *s);
-int				ft_isdigit(char c);
-int				ft_atoi(const char *s);
-void			ft_puthex(unsigned int n);
-int				num_base(int n, int base);
-void			print_str(void);
-void			print_int(void);
-void			print_hex(void);
-void			ft_check(const char *s, int *i);
-int				ft_printf(const char *s, ...);
+int		ft_printf(const char *s, ...);
+void	init_flags(void);
+void	ft_check(const char *s, int *i);
+void	ft_putchar(char c);
+int 	ft_strlen(char *s);
+int 	ft_isdigit(char c);
+int 	num_base(int n, int base);
+int 	ft_atoi(const char *s);
+void	print_int(void);
+void	ft_putnbr(int n, int precision);
+void	print_str(void);
+void	print_hex(void);
+void	ft_puthex(unsigned int n);
 #endif
