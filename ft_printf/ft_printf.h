@@ -27,7 +27,7 @@ typedef struct	s_flags
 
 t_flags			flags;
 va_list			ap;
-int				g_count = 0;
+int				g_count;
 
 int		ft_printf(const char *s, ...);
 void	init_flags(void);

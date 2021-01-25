@@ -72,10 +72,10 @@ int 	ft_isdigit(char c)
 
 void	print_str(void)
 {
-	char *str;
-	int  spaces;
-	int precision;
-	int i;
+	char	*str;
+	int		spaces;
+	int		precision;
+	int		i;
 
 	str = va_arg(ap, char*);
 	if (!str)
@@ -97,7 +97,7 @@ void	print_str(void)
 
 void	ft_puthex(unsigned int n)
 {
-	char *num;
+	char	*num;
 
 	num = "0123456789abcdef";
 	if (n < 16)
@@ -111,10 +111,10 @@ void	ft_puthex(unsigned int n)
 
 void	print_hex(void)
 {
-	unsigned int x;
-	int spaces;
-	int precision;
-	int i;
+	unsigned int	x;
+	int				spaces;
+	int				precision;
+	int				i;
 
 	x = va_arg(ap, unsigned int);
 	precision = (flags.precision > num_base(x, 16) ? flags.precision - num_base(x, 16) : 0);
@@ -130,7 +130,7 @@ void	print_hex(void)
 
 void	ft_putnbr(int n, int precision)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	if (n < 0)
 	{
@@ -160,16 +160,16 @@ void	ft_putnbr(int n, int precision)
 
 void	print_int(void)
 {
-	int d;
-	int i;
-	int spaces;
-	int precision;
-	int signe;
+	int		d;
+	int		i;
+	int		spaces;
+	int		precision;
+	int		sign;
 
 	d = va_arg(ap, int);
-	signe = d < 0 ? 1 : 0;
+	sign = d < 0 ? 1 : 0;
 	precision = (flags.precision > num_base(d, 10)) ? flags.precision - num_base(d, 10) : 0;
-	spaces = (precision > 0) ? flags.width - (flags.precision + signe) : flags.width - (num_base(d, 10) + signe);
+	spaces = (precision > 0) ? flags.width - (flags.precision + sign) : flags.width - (num_base(d, 10) + sign);
 	i = -1;
 	while (++i < spaces)
 		ft_putchar(' ');
@@ -203,10 +203,10 @@ void	ft_check(const char *s, int *i)
 
 int		ft_printf(const char *s, ...)
 {
-	int i;
+	int		i;
 
-	g_count = 0;
 	va_start(ap, s);
+	g_count = 0;
 	i = 0;
 	while (s[i])
 	{
